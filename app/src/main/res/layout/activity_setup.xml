@@ -1,0 +1,72 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="5"
+    android:rowCount="6"
+    tools:context=".SetupActivity"
+    android:id="@+id/activity_setup">
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="40px"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="550dp"
+        android:layout_height="47dp"
+        android:text="Registered labo Wifi"
+        android:id="@+id/SetupWifiView"
+        android:layout_row="1"
+        android:layout_column="3"
+        android:textSize="30sp"
+        android:gravity="center" />
+
+    <Space
+        android:layout_width="50px"
+        android:layout_height="20px"
+        android:layout_row="2"
+        android:layout_column="0" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_button"
+        android:id="@+id/add_button"
+        android:layout_row="2"
+        android:layout_column="1" />
+
+    <ListView
+        android:layout_width="550dp"
+        android:layout_height="334dp"
+        android:id="@+id/listView"
+        android:layout_row="2"
+        android:layout_column="3"
+        android:layout_rowSpan="2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_button"
+        android:id="@+id/del_button"
+        android:layout_row="3"
+        android:layout_column="1" />
+
+    <TextView
+        android:layout_width="550dp"
+        android:layout_height="47dp"
+        android:text="Registered home Wifi"
+        android:id="@+id/textView"
+        android:layout_row="4"
+        android:layout_column="3"
+        android:textSize="30sp"
+        android:gravity="center" />
+
+    <ListView
+        android:layout_width="550dp"
+        android:layout_height="334dp"
+        android:id="@+id/listView2"
+        android:layout_row="5"
+        android:layout_column="3" />
+</GridLayout>

@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete Wifi Data"
-        android:id="@+id/delButton"
+        android:id="@+id/setup_button"
         android:layout_row="4"
         android:layout_column="0" />
 

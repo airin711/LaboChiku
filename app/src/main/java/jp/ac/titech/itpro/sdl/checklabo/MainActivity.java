@@ -48,7 +48,9 @@ public class MainActivity extends Activity{
     private long time;
     private long starttime;
     String[] apInfo = new String[4];
-    String[] apData = new String[4];
+    String[] apData = new String[20];
+
+
 
     BufferedReader in = null;
 
@@ -68,13 +70,19 @@ public class MainActivity extends Activity{
         timeView = (TextView)findViewById(R.id.timeView);
         spendView = (TextView)findViewById(R.id.spendtimeView);
 
-        Button delbutton = (Button)findViewById(R.id.delButton);
+        for(int i = 0; i < 20; i++){
+            apData[i] = ""; // initialize labo wifi data to display to list view
+        }
+
+        Button delbutton = (Button)findViewById(R.id.setup_button);
         delbutton.setOnClickListener(new OnClickListener() {
-            // このメソッドがクリック毎に呼び出される
             public void onClick(View v) {
-                deleteFile(FILENAME);
-                Log.d("FileAccess", "delete...");
-                Toast.makeText(getApplicationContext(), "Delete local file!", Toast.LENGTH_LONG).show();
+//                deleteFile(FILENAME);
+//                Toast.makeText(getApplicationContext(), "Delete local file!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, SetupActivity.class);
+                //intent.setClassName("jp.ac.titech.itpro.sdl.checklabo", "jp.ac.titech.itpro.sdl.checklabo.SetupActivity");
+                intent.putExtra("laboWifi", apData);
+                startActivity(intent);
             }
         });
 
@@ -87,9 +95,6 @@ public class MainActivity extends Activity{
 
         manager = (WifiManager)getSystemService(WIFI_SERVICE);
         info = manager.getConnectionInfo();
-
-//        ConnectivityManager cm = (ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
-//        NetworkInfo ninfo = cm.getActiveNetworkInfo();
 
 
         // SSID を取得
@@ -112,16 +117,7 @@ public class MainActivity extends Activity{
         IntentFilter filter = new IntentFilter();
         filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(mBroadcastReceiver, filter);
- //       registerReceiver(mBroadcastReceiver, new IntentFilter(WifiManager.NETWORK_STATE_CHANGED_ACTION));
 
-//        idData = pref.getString("SSID", null);
-//        if(idData == null){
-//            SharedPreferences.Editor editor = pref.edit();
-//            editor.putString("SSID", apInfo[0]);
-//            editor.commit();
-//        }else{
-//
-//        }
 
         String path = (new StringBuffer()).append(getFilesDir()).append("/").append(FILENAME).toString();
         Log.d("path", path);
@@ -151,12 +147,6 @@ public class MainActivity extends Activity{
                 Log.d("FileAccess", "read!");
                 fis.close();
 
-//            in = openFileInput("pref.txt"); //LOCAL_FILE = "log.txt";
-//
-//            BufferedReader reader= new BufferedReader(new InputStreamReader(in,"UTF-8"));
-//            while( (lineBuffer = reader.readLine()) != null ){
-
-//            }
             } catch (IOException e) {
                 e.printStackTrace();
                 Log.d("FileAccess", "error!");

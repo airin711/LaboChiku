@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">CheckLabo</string>
+    <string name="app_name">Labochiku</string>
+    <string name="setup">Wifi Setup</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="add_button">Add</string>
+    <string name="delete_button">Delete</string>
 </resources>
