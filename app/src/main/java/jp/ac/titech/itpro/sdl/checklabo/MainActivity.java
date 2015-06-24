@@ -33,6 +33,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.TimeZone;
 
 
@@ -48,7 +49,7 @@ public class MainActivity extends Activity{
     private long time;
     private long starttime;
     String[] apInfo = new String[4];
-    String[] apData = new String[20];
+    ArrayList<String> apData = new ArrayList<String>();
 
 
 
@@ -70,9 +71,9 @@ public class MainActivity extends Activity{
         timeView = (TextView)findViewById(R.id.timeView);
         spendView = (TextView)findViewById(R.id.spendtimeView);
 
-        for(int i = 0; i < 20; i++){
-            apData[i] = ""; // initialize labo wifi data to display to list view
-        }
+        //for(int i = 0; i < 20; i++){
+          //  apData[i] = ""; // initialize labo wifi data to display to list view
+        //}
 
         Button delbutton = (Button)findViewById(R.id.setup_button);
         delbutton.setOnClickListener(new OnClickListener() {
@@ -81,8 +82,8 @@ public class MainActivity extends Activity{
 //                Toast.makeText(getApplicationContext(), "Delete local file!", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, SetupActivity.class);
                 //intent.setClassName("jp.ac.titech.itpro.sdl.checklabo", "jp.ac.titech.itpro.sdl.checklabo.SetupActivity");
-                intent.putExtra("laboWifi", apData);
-                intent.putExtra("nowWifi", apInfo[0]);
+                intent.putStringArrayListExtra("laboWifi", apData);
+                intent.putExtra("nowWifi", info.getSSID());
                 intent.putExtra("filename", FILENAME);
                 startActivity(intent);
             }
@@ -133,15 +134,16 @@ public class MainActivity extends Activity{
                 FileInputStream fis = openFileInput(FILENAME);
                 in = new BufferedReader(new InputStreamReader(fis));
                 int i = 0;
-                apData[0] = null;
+                //apData[0] = null;
                 String str = in.readLine();
                 while(str != null){
-                    apData[i] = str;
+                    //apData[i] = str;
+                    apData.add(str);
                     str = in.readLine();
                     i++;
                 }
-                textView.append(apData[0]);
-                if(apData[0].isEmpty()){
+                textView.append(apData.get(0));
+                if(apData.get(0).isEmpty()){
                     Log.d("FileAccess", "don't have!");
                     textView.append("Don't have apInfo\n");
 
