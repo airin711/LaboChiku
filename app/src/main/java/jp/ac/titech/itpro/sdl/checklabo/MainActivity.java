@@ -54,7 +54,7 @@ public class MainActivity extends Activity{
 
     BufferedReader in = null;
 
-    String FILENAME = "ap_data.txt";
+    final String FILENAME = "ap_data.txt";
     //String string = "hello world!";
 
     private LoopEngine loopEngine = new LoopEngine();
@@ -82,6 +82,8 @@ public class MainActivity extends Activity{
                 Intent intent = new Intent(MainActivity.this, SetupActivity.class);
                 //intent.setClassName("jp.ac.titech.itpro.sdl.checklabo", "jp.ac.titech.itpro.sdl.checklabo.SetupActivity");
                 intent.putExtra("laboWifi", apData);
+                intent.putExtra("nowWifi", apInfo[0]);
+                intent.putExtra("filename", FILENAME);
                 startActivity(intent);
             }
         });
@@ -155,8 +157,8 @@ public class MainActivity extends Activity{
         }else{
             Log.d("FileAccess", "don't have apdata");
             try {
-                FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
-                fos.write(info.getSSID().getBytes());
+                FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_APPEND);
+                fos.write("".getBytes());
             }catch  (IOException e) {
                 e.printStackTrace();
                 Log.d("FileAccess", "can't write!");
