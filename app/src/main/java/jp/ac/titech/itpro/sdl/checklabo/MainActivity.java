@@ -118,7 +118,8 @@ public class MainActivity extends Activity{
         textView.setText(apInfo[0] + "\n" + apInfo[1] + "\n" + apInfo[2] + "\n" + apInfo[3]);
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        //filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
         registerReceiver(mBroadcastReceiver, filter);
 
 
@@ -187,22 +188,47 @@ public class MainActivity extends Activity{
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)){
-                int extraWifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
-                if(extraWifiState == WifiManager.WIFI_STATE_DISABLED){
-                    textView.append("disabled-!");
-                    time = System.currentTimeMillis();
-                    TimeList=TimeList + "  Stop= " + sdf.format(time + (9 * 3600 * 1000)) + "\n";
-                    TimeList=TimeList + "  (Lap= " + sdf.format(time - starttime) + ")\n";
-                    //TimeList=TimeList + "  (Lap= " + (time - starttime) + ")\n";
-                    timeView.setText(TimeList);
-                    loopEngine.stop();
-
-                }else if(extraWifiState == WifiManager.WIFI_STATE_ENABLED){// && apInfo[0] == idData){
-
-                    //textView.append(String.format("enabled-!, idData:%s\n", idData));
-                    spendView.setText(sdf.format(time - starttime));
-                    loopEngine.start();
+//            if (action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)){
+//                int extraWifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
+//                if(extraWifiState == WifiManager.WIFI_STATE_DISABLED){
+//                    textView.append("disabled-!");
+//                    time = System.currentTimeMillis();
+//                    TimeList=TimeList + "  Stop= " + sdf.format(time + (9 * 3600 * 1000)) + "\n";
+//                    TimeList=TimeList + "  (Lap= " + sdf.format(time - starttime) + ")\n";
+//                    //TimeList=TimeList + "  (Lap= " + (time - starttime) + ")\n";
+//                    timeView.setText(TimeList);
+//                    loopEngine.stop();
+//
+//                }else if(extraWifiState == WifiManager.WIFI_STATE_ENABLED){// && apInfo[0] == idData){
+//
+//                    //textView.append(String.format("enabled-!, idData:%s\n", idData));
+//                    spendView.setText(sdf.format(time - starttime));
+//                    loopEngine.start();
+//                }
+//            }
+            if (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)){
+                NetworkInfo netInfo	= intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
+                NetworkInfo.State state = netInfo.getState();
+                switch(state){
+                    case CONNECTING:
+                        Toast.makeText(getApplicationContext(), "connecting!", Toast.LENGTH_SHORT).show();
+                        Log.d("wifi change", "CONNECTING");
+                        break;
+                    case CONNECTED:
+                        Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
+                        Log.d("wifi change", "CONNECTED");
+                        break;
+                    case DISCONNECTING:
+                        Toast.makeText(getApplicationContext(), "disconnecting!", Toast.LENGTH_SHORT).show();
+                        Log.d("wifi change", "DISCONNECTING");
+                        break;
+                    case DISCONNECTED:
+                        Toast.makeText(getApplicationContext(), "disconnected!", Toast.LENGTH_SHORT).show();
+                        Log.d("wifi change", "DISCONNECTED");
+                        break;
+                    default:
+                        Toast.makeText(getApplicationContext(), "default...", Toast.LENGTH_SHORT).show();
+                        Log.d("wifi change", "UNKNOWN");
                 }
             }
         }
