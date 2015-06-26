@@ -215,6 +215,8 @@ public class MainActivity extends Activity{
                         Log.d("wifi change", "CONNECTING");
                         break;
                     case CONNECTED:
+                        spendView.setText(sdf.format(time - starttime));
+                        loopEngine.start();
                         Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
                         Log.d("wifi change", "CONNECTED");
                         break;
@@ -223,6 +225,12 @@ public class MainActivity extends Activity{
                         Log.d("wifi change", "DISCONNECTING");
                         break;
                     case DISCONNECTED:
+                        time = System.currentTimeMillis();
+                        TimeList=TimeList + "  Stop= " + sdf.format(time + (9 * 3600 * 1000)) + "\n";
+                        TimeList=TimeList + "  (Lap= " + sdf.format(time - starttime) + ")\n";
+                        //TimeList=TimeList + "  (Lap= " + (time - starttime) + ")\n";
+                        timeView.setText(TimeList);
+                        loopEngine.stop();
                         Toast.makeText(getApplicationContext(), "disconnected!", Toast.LENGTH_SHORT).show();
                         Log.d("wifi change", "DISCONNECTED");
                         break;
