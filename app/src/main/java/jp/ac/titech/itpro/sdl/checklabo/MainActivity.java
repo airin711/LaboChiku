@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -34,28 +35,45 @@ import java.io.InputStreamReader;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.TimeZone;
 
 
 public class MainActivity extends Activity{
-    WifiManager manager;
-    WifiInfo info;
+    WifiManager manager;// = (WifiManager)getSystemService(WIFI_SERVICE);
+    WifiInfo info;// = manager.getConnectionInfo();
     TextView textView;
     TextView timeView;
     TextView spendView;
+
 
     private SimpleDateFormat sdf;
     private String TimeList;
     private long time;
     private long starttime;
+    private int year;
+    private int today;
+    private long todayStaytime;
     String[] apInfo = new String[4];
     ArrayList<String> apData = new ArrayList<String>();
+    //ArrayList<String> timeData = new ArrayList<String>();
+    LinkedList<Integer> timeData = new LinkedList<Integer>();
+    LinkedList<String> dayData = new LinkedList<String>();
+
+    Calendar cal;// = Calendar.getInstance();
 
 
 
     BufferedReader in = null;
+    BufferedReader tin = null;
+    BufferedReader din = null;
+    FileOutputStream ftos;
+    FileOutputStream fdos;
 
     final String FILENAME = "ap_data.txt";
+    final String DATAFILE = "time_data.txt";
+    final String DATAFILE2 = "day_data.txt";
     //String string = "hello world!";
 
     private LoopEngine loopEngine = new LoopEngine();
@@ -93,8 +111,12 @@ public class MainActivity extends Activity{
         sdf = new SimpleDateFormat("HH:mm:ss");
         sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
         TimeList = "start=" + sdf.format(time + (9 * 3600 * 1000));
-        timeView.setText(TimeList);
+        //timeView.setText(TimeList);
+
         starttime = time;
+
+//        today = cal.get(Calendar.DAY_OF_MONTH);
+//        month = cal.get(Calendar.MONTH);
 
         manager = (WifiManager)getSystemService(WIFI_SERVICE);
         info = manager.getConnectionInfo();
@@ -125,8 +147,13 @@ public class MainActivity extends Activity{
 
         String path = (new StringBuffer()).append(getFilesDir()).append("/").append(FILENAME).toString();
         Log.d("path", path);
+        String path2 = (new StringBuffer()).append(getFilesDir()).append("/").append(DATAFILE).toString();
+        Log.d("path", path2);
+        String path3 = (new StringBuffer()).append(getFilesDir()).append("/").append(DATAFILE2).toString();
+        Log.d("path", path3);
 
 
+        // file open for wifi data
         File file = new File(path);
         if (file.exists()) {
             Log.d("FileAccess", "file exists");
@@ -134,14 +161,14 @@ public class MainActivity extends Activity{
 
                 FileInputStream fis = openFileInput(FILENAME);
                 in = new BufferedReader(new InputStreamReader(fis));
-                int i = 0;
+                //int i = 0;
                 //apData[0] = null;
                 String str = in.readLine();
                 while(str != null){
                     //apData[i] = str;
                     apData.add(str);
                     str = in.readLine();
-                    i++;
+                  //  i++;
                 }
                 textView.append(apData.get(0));
                 if(apData.get(0).isEmpty()){
@@ -162,15 +189,137 @@ public class MainActivity extends Activity{
             try {
                 FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_APPEND);
                 fos.write("".getBytes());
+                fos.close();
             }catch  (IOException e) {
                 e.printStackTrace();
                 Log.d("FileAccess", "can't write!");
             }
         }
 
+        deleteFile(path2);
+
+        // file open for time data
+        File file2 = new File(path2);
+        if (file2.exists()) {
+            Log.d("FileAccess", "time file exists");
+            try {
+                FileInputStream ftis = openFileInput(DATAFILE);
+                tin = new BufferedReader(new InputStreamReader(ftis));
+                //int i = 0;
+                String str = tin.readLine();
+                while(str != null){
+                    timeData.add(Integer.parseInt(str));
+                    str = tin.readLine();
+                  //  i++;
+                }
+                //textView2.append(timeData.get(0));
+                Log.d("FileAccess", "read!");
+                ftis.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.d("FileAccess", "error!");
+            }
+            try {
+                ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
+            }catch  (IOException e) {
+                e.printStackTrace();
+                Log.d("FileAccess", "can't write!");
+            }
+
+        }else{
+//            today = cal.get(Calendar.DAY_OF_YEAR);
+//            year = cal.get(Calendar.YEAR);
+//            timeData.add(year);
+//            timeData.add(today);
+            timeData.add(0);
+            Log.d("FileAccess", "don't have apdata");
+            try {
+                ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
+                //ftos.write("".getBytes());
+                Toast.makeText(getApplicationContext(), "time data file is created", Toast.LENGTH_SHORT).show();
+                //ftos.close();
+            }catch  (IOException e) {
+                e.printStackTrace();
+                Log.d("FileAccess", "can't write!");
+            }
+        }
+
+        // file open for day data
+        File file3 = new File(path3);
+        if (file3.exists()) {
+            Log.d("FileAccess", "day file exists");
+            try {
+                FileInputStream fdis = openFileInput(DATAFILE2);
+                din = new BufferedReader(new InputStreamReader(fdis));
+                //int i = 0;
+                String str = din.readLine();
+                while(str != null){
+                    dayData.add(str);
+                    str = din.readLine();
+                    //  i++;
+                }
+                Log.d("FileAccess", "read!");
+                fdis.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.d("FileAccess", "error!");
+            }
+            try {
+                fdos = openFileOutput(DATAFILE2, Context.MODE_PRIVATE);
+            }catch  (IOException e) {
+                e.printStackTrace();
+                Log.d("FileAccess", "can't write!");
+            }
+
+        }else{
+            today = cal.get(Calendar.DAY_OF_YEAR);
+            year = cal.get(Calendar.YEAR);
+            dayData.add(String.valueOf(year) + "/" + String.valueOf(today));
+
+            Log.d("FileAccess", "don't have apdata");
+            try {
+                fdos = openFileOutput(DATAFILE2, Context.MODE_PRIVATE);
+                Toast.makeText(getApplicationContext(), "day data file is created", Toast.LENGTH_SHORT).show();
+            }catch  (IOException e) {
+                e.printStackTrace();
+                Log.d("FileAccess", "can't write!");
+            }
+        }
+
+        timeView.append(String.valueOf(timeData.get(0)) + " " +dayData.get(0));
+
 
     }
 
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+//        today = cal.get(Calendar.DAY_OF_YEAR);
+//        year = cal.get(Calendar.YEAR);
+        time = System.currentTimeMillis();
+        todayStaytime = time - starttime;
+        try{
+            for(Integer time : timeData) {
+                //ftos.write(String.valueOf(todayStaytime).getBytes());
+                ftos.write((String.valueOf(time) + "\n").getBytes());
+                ftos.close();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        try{
+            for(String text : dayData){
+                fdos.write(text.getBytes());
+                fdos.close();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void onResume(){
@@ -188,40 +337,29 @@ public class MainActivity extends Activity{
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-//            if (action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)){
-//                int extraWifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
-//                if(extraWifiState == WifiManager.WIFI_STATE_DISABLED){
-//                    textView.append("disabled-!");
-//                    time = System.currentTimeMillis();
-//                    TimeList=TimeList + "  Stop= " + sdf.format(time + (9 * 3600 * 1000)) + "\n";
-//                    TimeList=TimeList + "  (Lap= " + sdf.format(time - starttime) + ")\n";
-//                    //TimeList=TimeList + "  (Lap= " + (time - starttime) + ")\n";
-//                    timeView.setText(TimeList);
-//                    loopEngine.stop();
-//
-//                }else if(extraWifiState == WifiManager.WIFI_STATE_ENABLED){// && apInfo[0] == idData){
-//
-//                    //textView.append(String.format("enabled-!, idData:%s\n", idData));
-//                    spendView.setText(sdf.format(time - starttime));
-//                    loopEngine.start();
-//                }
-//            }
+
             if (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)){
                 NetworkInfo netInfo	= intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
                 NetworkInfo.State state = netInfo.getState();
                 switch(state){
                     case CONNECTING:
-                        Toast.makeText(getApplicationContext(), "connecting!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "connecting!", Toast.LENGTH_SHORT).show();
                         Log.d("wifi change", "CONNECTING");
                         break;
                     case CONNECTED:
-                        spendView.setText(sdf.format(time - starttime));
-                        loopEngine.start();
-                        Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
+                        manager = (WifiManager)getSystemService(WIFI_SERVICE);
+                        info = manager.getConnectionInfo();
+                        if(apData.indexOf(info.getSSID())!=-1) {
+                            spendView.setText(sdf.format(time - starttime));
+                            time = System.currentTimeMillis();
+                            starttime = time;
+                            loopEngine.start();
+                            Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
+                        }
                         Log.d("wifi change", "CONNECTED");
                         break;
                     case DISCONNECTING:
-                        Toast.makeText(getApplicationContext(), "disconnecting!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "disconnecting!", Toast.LENGTH_SHORT).show();
                         Log.d("wifi change", "DISCONNECTING");
                         break;
                     case DISCONNECTED:
@@ -229,9 +367,26 @@ public class MainActivity extends Activity{
                         TimeList=TimeList + "  Stop= " + sdf.format(time + (9 * 3600 * 1000)) + "\n";
                         TimeList=TimeList + "  (Lap= " + sdf.format(time - starttime) + ")\n";
                         //TimeList=TimeList + "  (Lap= " + (time - starttime) + ")\n";
-                        timeView.setText(TimeList);
+                        //timeView.setText(TimeList);
+                        todayStaytime = time - starttime;
+
+                        today = cal.get(Calendar.DAY_OF_YEAR);
+                        year = cal.get(Calendar.YEAR);
+
+
+                        //if((timeData.get(0) == year) & timeData.get(1) == today){
+                        if(dayData.get(dayData.size()-1).equals(String.valueOf(year) + "/" + String.valueOf(today))){
+                            timeData.set(timeData.size()-1, (int)todayStaytime + timeData.get(timeData.size()-1));
+                            timeView.append(String.valueOf(dayData.get(dayData.size() - 1)));
+                        }else{
+                            timeData.add((int)todayStaytime);
+                            dayData.add(String.valueOf(year) + "/" + String.valueOf(today));
+                            timeView.append(String.valueOf(dayData.get(dayData.size()-2)) + "yesterday");
+                        }
+
                         loopEngine.stop();
-                        Toast.makeText(getApplicationContext(), "disconnected!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "discon
+                        // nected!", Toast.LENGTH_SHORT).show();
                         Log.d("wifi change", "DISCONNECTED");
                         break;
                     default:
