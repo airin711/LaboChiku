@@ -68,6 +68,10 @@ public class LineGraph extends View {
     private PorterDuffXfermode mXfermode = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
     private Canvas mCanvas;
 
+    //public float xPixels;
+    //public float yPixels;
+
+
     public LineGraph(Context context) {
         this(context, null);
     }
@@ -333,6 +337,28 @@ public class LineGraph extends View {
         paint.setAntiAlias(antiAlias);
     }
 
+    public float xPixels(int lIndex, int pIndex){
+        float xPixels;
+        float sidePadding = 10;
+        float usableWidth = getWidth() - 2 * sidePadding;
+        float minX = getMinLimX();
+        float maxX = getMaxLimX();
+        float xPercent = (mLines.get(lIndex).getPoint(pIndex).getX() - minX) / (maxX - minX);
+        xPixels = sidePadding + (xPercent * usableWidth);
+        return xPixels;
+    }
+    public float yPixels(int lIndex, int pIndex){
+        float yPixels;
+        float bottomPadding = 10;
+        float topPadding = 10;
+        float usableHeight = getHeight() - bottomPadding - topPadding;
+        float maxY = getMaxLimY();
+        float minY = getMinLimY();
+        float yPercent = (mLines.get(lIndex).getPoint(pIndex).getY() - minY) / (maxY - minY);
+        yPixels = getHeight() - bottomPadding - (usableHeight * yPercent);
+        return yPixels;
+    }
+
     public void onDraw(Canvas canvas) {
         if (null == mFullImage) {
             mFullImage = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
@@ -477,6 +503,8 @@ public class LineGraph extends View {
                 for (LinePoint p : line.getPoints()) {
                     float yPercent = (p.getY() - minY) / (maxY - minY);
                     float xPercent = (p.getX() - minX) / (maxX - minX);
+//                    float xPixels = sidePadding + (xPercent * usableWidth);
+//                    float yPixels = getHeight() - bottomPadding - (usableHeight * yPercent);
                     float xPixels = sidePadding + (xPercent * usableWidth);
                     float yPixels = getHeight() - bottomPadding - (usableHeight * yPercent);
 

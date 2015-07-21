@@ -10,7 +10,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="161dp"
+        android:layout_height="107dp"
         android:id="@+id/spendtimeView"
         android:layout_row="0"
         android:layout_column="1"
@@ -19,7 +19,7 @@
 
     <TextView
         android:layout_width="739dp"
-        android:layout_height="147dp"
+        android:layout_height="124dp"
         android:id="@+id/ap_info"
         android:layout_row="1"
         android:layout_column="1"
@@ -28,30 +28,21 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="325dp"
+        android:layout_height="415dp"
         android:layout_row="2"
         android:layout_column="0"
         android:background="#00ffffff"
         android:layout_columnSpan="2">
 
-        <TextView
-            android:layout_width="68dp"
-            android:layout_height="317dp"
-            android:text="時間 (h)\n\n24h\n\n\n\n\n12h\n\n\n\n\n0"
-            android:id="@+id/graph_text2"
-            android:layout_gravity="left|center_vertical"
-            android:gravity="right"
-            android:textSize="18sp" />
-
         <com.echo.holographlibrary.LineGraph
-            android:layout_width="563dp"
-            android:layout_height="215dp"
+            android:layout_width="612dp"
+            android:layout_height="221dp"
             android:id="@+id/graph"
             android:layout_gravity="center" />
 
         <TextView
             android:layout_width="392dp"
-            android:layout_height="53dp"
+            android:layout_height="79dp"
             android:text="一週間のらぼちく時間"
             android:id="@+id/graph_text1"
             android:layout_gravity="center_horizontal|top"
@@ -60,17 +51,75 @@
             android:gravity="center_horizontal|bottom" />
 
         <TextView
-            android:layout_width="592dp"
-            android:layout_height="51dp"
+            android:layout_width="658dp"
+            android:layout_height="92dp"
             android:id="@+id/graph_text3"
             android:layout_gravity="center_horizontal|bottom"
+            android:textSize="18sp"
+            android:gravity="top" />
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="366dp"
+            android:text="\n\n\n時間\n24h\n\n\n\n\n12h\n\n\n\n\n0"
+            android:id="@+id/graph_text2"
+            android:layout_gravity="left|top"
+            android:gravity="right"
             android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="612dp"
+            android:layout_height="wrap_content"
+            android:text="---------------------------------------------------------------------------------------------------------------------------------------------------------"
+            android:id="@+id/textView2"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="161dp"
+            android:layout_height="141dp"
+            android:id="@+id/average"
+            android:layout_gravity="right|top"
+            android:gravity="bottom|left"
+            android:textSize="18sp" />
+
+        <Switch
+            android:layout_width="628dp"
+            android:layout_height="101dp"
+            android:id="@+id/switch1"
+            android:layout_gravity="center_horizontal|top"
+            android:switchMinWidth="60sp"
+            android:height="50dp"
+            android:textOff="月間"
+            android:textOn="週間"
+            android:switchPadding="100sp"
+            android:textSize="50sp"
+            android:checked="false"
+            android:showText="true"
+            android:singleLine="true"
+            android:splitTrack="false"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:maxHeight="50dp"
+            android:elegantTextHeight="true"
+            android:thumb="@drawable/c_thumb"
+            android:track="@drawable/g_track"
+            android:gravity="bottom" />
+
+        <view
+            android:layout_width="612dp"
+            android:layout_height="221dp"
+            class="jp.ac.titech.itpro.sdl.checklabo.GraphValue"
+            android:id="@+id/value"
+            android:layout_gravity="center" />
+
     </FrameLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete Wifi Data"
+        android:text="Wifi Setting"
         android:id="@+id/setup_button"
         android:layout_row="4"
         android:layout_column="1" />

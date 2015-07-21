@@ -22,10 +22,13 @@ import android.net.wifi.WifiManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -52,6 +56,10 @@ public class MainActivity extends Activity{
     TextView timeView;
     TextView spendView;
     TextView graphx;
+    TextView average;
+    LineGraph graph;
+    GraphValue value;
+
 
 
     private SimpleDateFormat sdf;
@@ -71,7 +79,7 @@ public class MainActivity extends Activity{
 
     Calendar cal;// = Calendar.getInstance();
 
-
+    //Line line;
 
     BufferedReader in = null;
     BufferedReader tin = null;
@@ -97,6 +105,8 @@ public class MainActivity extends Activity{
         //timeView = (TextView)findViewById(R.id.timeView);
         spendView = (TextView)findViewById(R.id.spendtimeView);
         graphx = (TextView)findViewById(R.id.graph_text3);
+        average = (TextView)findViewById(R.id.average);
+        value = (GraphValue)findViewById(R.id.value);
 
 
         //for(int i = 0; i < 20; i++){
@@ -116,6 +126,7 @@ public class MainActivity extends Activity{
                 startActivity(intent);
             }
         });
+
 
         time = System.currentTimeMillis();
         sdf = new SimpleDateFormat("HH:mm:ss");
@@ -212,8 +223,8 @@ public class MainActivity extends Activity{
             }
         }
 
-        deleteFile(DATAFILE);
-        deleteFile(DATAFILE2);
+        //deleteFile(DATAFILE);
+        //deleteFile(DATAFILE2);
 
         // file open for time data
         File file2 = new File(path2);
@@ -238,12 +249,12 @@ public class MainActivity extends Activity{
                 e.printStackTrace();
                 Log.d("FileAccess", "error!");
             }
-            try {
-                ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
-            }catch  (IOException e) {
-                e.printStackTrace();
-                Log.d("FileAccess", "can't write!");
-            }
+//            try {
+//                ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
+//            }catch  (IOException e) {
+//                e.printStackTrace();
+//                Log.d("FileAccess", "can't write!");
+//            }
 
         }else{
 //            today = cal.get(Calendar.DAY_OF_YEAR);
@@ -260,6 +271,7 @@ public class MainActivity extends Activity{
             Log.d("FileAccess", "don't have time data");
             try {
                 ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
+                ftos.close();
                 //ftos.write("".getBytes());
                 Toast.makeText(getApplicationContext(), "time data file is created", Toast.LENGTH_SHORT).show();
                 //ftos.close();
@@ -290,27 +302,29 @@ public class MainActivity extends Activity{
                 e.printStackTrace();
                 Log.d("FileAccess", "error!");
             }
-            try {
-                fdos = openFileOutput(DATAFILE2, Context.MODE_PRIVATE);
-            }catch  (IOException e) {
-                e.printStackTrace();
-                Log.d("FileAccess", "can't write!");
-            }
+//            try {
+//                fdos = openFileOutput(DATAFILE2, Context.MODE_PRIVATE);
+//            }catch  (IOException e) {
+//                e.printStackTrace();
+//                Log.d("FileAccess", "can't write!");
+//            }
 
         }else{
 //            today = cal.get(Calendar.DAY_OF_YEAR);
 //            year = cal.get(Calendar.YEAR);
+            dayData.add(String.valueOf(year) + String.valueOf(today-7));
             dayData.add(String.valueOf(year) + String.valueOf(today-6));
             dayData.add(String.valueOf(year) + String.valueOf(today-5));
             dayData.add(String.valueOf(year) + String.valueOf(today-4));
             dayData.add(String.valueOf(year) + String.valueOf(today-3));
             dayData.add(String.valueOf(year) + String.valueOf(today-2));
             dayData.add(String.valueOf(year) + String.valueOf(today-1));
-            dayData.add(String.valueOf(year) + String.valueOf(today));
+            //dayData.add(String.valueOf(year) + String.valueOf(today));
 
             Log.d("FileAccess", "don't have day data");
             try {
                 fdos = openFileOutput(DATAFILE2, Context.MODE_PRIVATE);
+                fdos.close();
                 Log.d("FileAccess", "day file is created!");
                 //Toast.makeText(getApplicationContext(), "day data file is created", Toast.LENGTH_SHORT).show();
             }catch  (IOException e) {
@@ -347,7 +361,7 @@ public class MainActivity extends Activity{
         }
 
         line.setColor(Color.parseColor("#9acd32")); // 線のいろ
-        LineGraph graph = (LineGraph) findViewById(R.id.graph);
+        graph = (LineGraph) findViewById(R.id.graph);
         graph.addLine(line);
         graph.setRangeX(0, 6.5f);
         graph.setRangeY(0, 24);
@@ -359,11 +373,81 @@ public class MainActivity extends Activity{
         int gday = gcal.get(Calendar.DAY_OF_MONTH);
 
         for(int x = 0; x < 7; x++) {
-            graphx.append("  " + String.valueOf(gmonth+1) + "/" + String.valueOf(gday) + "        ");
+            graphx.append("  " + String.valueOf(gmonth+1) + "/" + String.valueOf(gday) + "          ");
             gcal.add(Calendar.DAY_OF_MONTH, 1);
             gmonth = gcal.get(Calendar.MONTH);
             gday = gcal.get(Calendar.DAY_OF_MONTH);
         }
+
+        // グラフが押された時
+        graph.setOnPointClickedListener(new LineGraph.OnPointClickedListener() {
+            @Override
+            public void onClick(int lineIndex, int pointIndex) {
+                float x = graph.xPixels(lineIndex, pointIndex);
+                float y = graph.yPixels(lineIndex, pointIndex);
+
+                value.setValue(timeData.get(timeData.size() - 7 + pointIndex));
+                value.setXY(x, y);
+
+                //Toast.makeText(getApplicationContext(), "Line " + lineIndex + "/ Point " + pointIndex + "clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        int ave = (timeData.get(timeData.size()-1) + timeData.get(timeData.size()-2) + timeData.get(timeData.size()-3) + timeData.get(timeData.size()-4) + timeData.get(timeData.size()-5) + timeData.get(timeData.size()-6) + timeData.get(timeData.size()-7)) / (7 * 1000 * 3600);
+        average.setText("平均: " + ave + "時間");
+
+        Switch sw = (Switch)findViewById(R.id.switch1);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                //true -> 月間 faluse -> 週間
+                //Toast.makeText(getApplicationContext(), isChecked + "clicked", Toast.LENGTH_SHORT).show();
+                if(isChecked){
+                    graph.removeAllLines();
+                }else{
+                    int number = 0;
+                    Line line = new Line();
+                    if(timeData.size() > 6){
+                        while(number < 7){
+                            LinePoint linePoint = new LinePoint();
+                            linePoint.setY(timeData.get(timeData.size()- 7 + number) / (1000 * 60 * 60)); // 分単位
+                            linePoint.setX(number);
+                            linePoint.setColor(Color.parseColor("#9acd32"));
+                            line.addPoint(linePoint);
+                            number++;
+                        }
+                    }else {
+                        while (number < timeData.size()) {
+                            LinePoint linePoint = new LinePoint();
+                            linePoint.setY(timeData.get(number) / (1000 * 60 * 60)); // 分単位
+                            linePoint.setX(number);
+                            linePoint.setColor(Color.parseColor("#9acd32"));
+                            line.addPoint(linePoint);
+                            number++;
+                        }
+                    }
+
+                    line.setColor(Color.parseColor("#9acd32")); // 線のいろ
+                    LineGraph graph = (LineGraph) findViewById(R.id.graph);
+                    graph.addLine(line);
+                    graph.setRangeX(0, 6.5f);
+                    graph.setRangeY(0, 24);
+                    Calendar gcal = Calendar.getInstance();
+
+                    gcal.set(gcal.get(Calendar.YEAR), gcal.get(Calendar.MONTH), gcal.get(Calendar.DAY_OF_MONTH) - 6);
+                    int gmonth = gcal.get(Calendar.MONTH);
+                    int gday = gcal.get(Calendar.DAY_OF_MONTH);
+
+                    graphx.setText("");
+                    for(int x = 0; x < 7; x++) {
+                        graphx.append("  " + String.valueOf(gmonth + 1) + "/" + String.valueOf(gday) + "          ");
+                        gcal.add(Calendar.DAY_OF_MONTH, 1);
+                        gmonth = gcal.get(Calendar.MONTH);
+                        gday = gcal.get(Calendar.DAY_OF_MONTH);
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -378,21 +462,27 @@ public class MainActivity extends Activity{
         today = cal.get(Calendar.DAY_OF_YEAR);
         year = cal.get(Calendar.YEAR);
 
-
-        if (dayData.get(dayData.size() - 1).equals(String.valueOf(year) + String.valueOf(today))) {
+        //textView.setText(dayData.get(dayData.size()-1) + String.valueOf(year) + String.valueOf(today) + (dayData.get(dayData.size() - 1)).equals(String.valueOf(year) + String.valueOf(today)));
+        if((dayData.get(dayData.size() - 1)).equals(String.valueOf(year) + String.valueOf(today))){
             timeData.set(timeData.size() - 1, (int)todayStaytime + timeData.get(timeData.size() - 1));
             Log.d("onDisconnected", "equal data's date today");
-        } else {
+        }else{
             timeData.add((int) todayStaytime);
-            dayData.add(String.valueOf(year) + String.valueOf(today) + "\n");
+            dayData.add(String.valueOf(year) + String.valueOf(today));
             Log.d("onDisconnected", "not equal");
         }
 
+
+
         try{
+            ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(ftos));
             for(int timedata : timeData) {
-                ftos.write((String.valueOf(timedata) + "\n").getBytes());
+                out.write(String.valueOf(timedata) + "\n");
+                //out.newLine();
             }
             Log.d("FileAccess", "onDestroy, time data is written");
+            out.close();
             ftos.close();
         }catch (IOException e){
             e.printStackTrace();
@@ -400,10 +490,14 @@ public class MainActivity extends Activity{
         }
 
         try{
+            fdos = openFileOutput(DATAFILE2, Context.MODE_PRIVATE);
+            BufferedWriter out2 = new BufferedWriter(new OutputStreamWriter(fdos));
             for(String text : dayData){
-                fdos.write(text.getBytes());
+                out2.write(text + "\n");
+                //out2.newLine();
             }
             Log.d("FileAccess", "onDestroy, day data is written");
+            out2.close();
             fdos.close();
         }catch (IOException e){
             e.printStackTrace();
@@ -474,7 +568,7 @@ public class MainActivity extends Activity{
                                 Log.d("onDisconnected", "equal data's date today");
                             } else {
                                 timeData.add((int)todayStaytime);
-                                dayData.add(String.valueOf(year) + String.valueOf(today) + "\n");
+                                dayData.add(String.valueOf(year) + String.valueOf(today));
                                 //timeView.append(String.valueOf(dayData.get(dayData.size() - 2)) + "yesterday\n");
                                 Log.d("onDisconnected", "not equal");
                             }
