@@ -7,37 +7,32 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Message;
-import android.preference.PreferenceManager;
 //import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -57,6 +52,10 @@ public class MainActivity extends Activity{
     TextView spendView;
     TextView graphx;
     TextView average;
+    TextView graphTitle;
+    ImageView labochikuView;
+    ImageView labofukiView;
+
     LineGraph graph;
     GraphValue value;
 
@@ -69,7 +68,16 @@ public class MainActivity extends Activity{
     private int year;
     private int today;
     private long todayStaytime;
+    private long savedTime;
     private int connectFlag;
+    private int graphFlag;
+    private int labo;
+
+    private int kanzume;
+    private int labochiku;
+    private int labogurashi;
+    private int ilovelab;
+
 
     String[] apInfo = new String[4];
     ArrayList<String> apData = new ArrayList<String>();
@@ -78,8 +86,10 @@ public class MainActivity extends Activity{
     LinkedList<String> dayData = new LinkedList<String>();
 
     Calendar cal;// = Calendar.getInstance();
+    Calendar mcal;
 
     //Line line;
+
 
     BufferedReader in = null;
     BufferedReader tin = null;
@@ -90,7 +100,12 @@ public class MainActivity extends Activity{
     final String FILENAME = "ap_data.txt";
     final String DATAFILE = "time_data.txt";
     final String DATAFILE2 = "day_data.txt";
+    final String PREF = "acivement";
+
     //String string = "hello world!";
+
+    SharedPreferences prefer;
+    SharedPreferences.Editor editor;
 
     private LoopEngine loopEngine = new LoopEngine();
     //SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -105,8 +120,21 @@ public class MainActivity extends Activity{
         //timeView = (TextView)findViewById(R.id.timeView);
         spendView = (TextView)findViewById(R.id.spendtimeView);
         graphx = (TextView)findViewById(R.id.graph_text3);
+        graphx.setTextSize(17.4f);
         average = (TextView)findViewById(R.id.average);
         value = (GraphValue)findViewById(R.id.value);
+        graphTitle = (TextView)findViewById(R.id.graph_title);
+        labochikuView = (ImageView)findViewById(R.id.labochikuView);
+        labofukiView = (ImageView)findViewById(R.id.labofuki);
+
+        labofukiView.setVisibility(View.INVISIBLE);
+        labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
+        labofukiView.invalidate();
+        labo = 0;
+
+
+        prefer = getSharedPreferences("PREF", MODE_PRIVATE);
+        editor = prefer.edit();
 
 
         //for(int i = 0; i < 20; i++){
@@ -139,6 +167,8 @@ public class MainActivity extends Activity{
         connectFlag = 0;
 
         cal = Calendar.getInstance();
+        mcal = Calendar.getInstance();
+
         today = cal.get(Calendar.DAY_OF_YEAR);
         year = cal.get(Calendar.YEAR);
 
@@ -221,7 +251,13 @@ public class MainActivity extends Activity{
                 e.printStackTrace();
                 Log.d("FileAccess", "can't write!");
             }
+
         }
+
+//        SharedPreferences.Editor editor = prefer.edit();
+//        editor.putInt("kanzume", 1);
+//        editor.commit();
+
 
         //deleteFile(DATAFILE);
         //deleteFile(DATAFILE2);
@@ -273,7 +309,7 @@ public class MainActivity extends Activity{
                 ftos = openFileOutput(DATAFILE, Context.MODE_PRIVATE);
                 ftos.close();
                 //ftos.write("".getBytes());
-                Toast.makeText(getApplicationContext(), "time data file is created", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "time data file is created", Toast.LENGTH_SHORT).show();
                 //ftos.close();
             }catch  (IOException e) {
                 e.printStackTrace();
@@ -333,17 +369,22 @@ public class MainActivity extends Activity{
             }
         }
 
+        //int kanzume = prefer.getInt("kanzume", 0);
+        //Toast.makeText(getApplicationContext(), "kanzume " + kanzume, Toast.LENGTH_LONG).show();
+
         //timeView.append(String.valueOf(timeData.get(0)) + " " + dayData.get(0) + "\n");
         //timeView.append("size of timeData = " + timeData.size() + "\n");
         //timeView.append("size of dayData = " + dayData.size() + "\n");
 
         // Draw line graph
         int number = 0;
+        int ave = 0;
         Line line = new Line();
         if(timeData.size() > 6){
             while(number < 7){
                 LinePoint linePoint = new LinePoint();
                 linePoint.setY(timeData.get(timeData.size()- 7 + number) / (1000 * 60 * 60)); // 分単位
+                ave += timeData.get(timeData.size()- 7 + number) / (1000 * 60);
                 linePoint.setX(number);
                 linePoint.setColor(Color.parseColor("#9acd32"));
                 line.addPoint(linePoint);
@@ -353,12 +394,17 @@ public class MainActivity extends Activity{
             while(number < timeData.size()){
                 LinePoint linePoint = new LinePoint();
                 linePoint.setY(timeData.get(number) / (1000 * 60 * 60)); // 分単位
+                ave += timeData.get(number) / (1000 * 60);
                 linePoint.setX(number);
                 linePoint.setColor(Color.parseColor("#9acd32"));
                 line.addPoint(linePoint);
                 number++;
             }
         }
+
+        ave = ave / 7;
+        average.setText("週平均: " + ave / 60 + "時間" + ave % 60 + "分");
+
 
         line.setColor(Color.parseColor("#9acd32")); // 線のいろ
         graph = (LineGraph) findViewById(R.id.graph);
@@ -373,11 +419,15 @@ public class MainActivity extends Activity{
         int gday = gcal.get(Calendar.DAY_OF_MONTH);
 
         for(int x = 0; x < 7; x++) {
-            graphx.append("  " + String.valueOf(gmonth+1) + "/" + String.valueOf(gday) + "          ");
+            graphx.append("   " + String.valueOf(gmonth+1) + "/" + String.valueOf(gday) + "           ");
             gcal.add(Calendar.DAY_OF_MONTH, 1);
             gmonth = gcal.get(Calendar.MONTH);
             gday = gcal.get(Calendar.DAY_OF_MONTH);
         }
+
+        graphTitle.setText("一週間のらぼちく時間");
+
+        graphFlag = 0;
 
         // グラフが押された時
         graph.setOnPointClickedListener(new LineGraph.OnPointClickedListener() {
@@ -386,15 +436,24 @@ public class MainActivity extends Activity{
                 float x = graph.xPixels(lineIndex, pointIndex);
                 float y = graph.yPixels(lineIndex, pointIndex);
 
-                value.setValue(timeData.get(timeData.size() - 7 + pointIndex));
-                value.setXY(x, y);
+                if (graphFlag == 0) {
+                    value.setValue(timeData.get(timeData.size() - 7 + pointIndex));
+                    value.setXY(x, y);
+                } else if (graphFlag == 1) {
+                    mcal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), 1);
+                    if (dayData.lastIndexOf(String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR) + pointIndex)) == -1) {
+                        value.setValue(0);
+                        //Log.d("gvalue", "value= " + timeData.lastIndexOf(dayData.lastIndexOf(String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR) + pointIndex))));
+                    } else {
+                        value.setValue(timeData.get(dayData.lastIndexOf(String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR) + pointIndex)))); // 分単位
+                    }
+                    value.setXY(x, y);
+                }
 
                 //Toast.makeText(getApplicationContext(), "Line " + lineIndex + "/ Point " + pointIndex + "clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
-        int ave = (timeData.get(timeData.size()-1) + timeData.get(timeData.size()-2) + timeData.get(timeData.size()-3) + timeData.get(timeData.size()-4) + timeData.get(timeData.size()-5) + timeData.get(timeData.size()-6) + timeData.get(timeData.size()-7)) / (7 * 1000 * 3600);
-        average.setText("平均: " + ave + "時間");
 
         Switch sw = (Switch)findViewById(R.id.switch1);
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -402,15 +461,83 @@ public class MainActivity extends Activity{
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 //true -> 月間 faluse -> 週間
                 //Toast.makeText(getApplicationContext(), isChecked + "clicked", Toast.LENGTH_SHORT).show();
+                int number = 0;
+                value.resetValue();
                 if(isChecked){
+
+                    int ave = 0;
+                    graphFlag = 1;
                     graph.removeAllLines();
+
+                    Line mline = new Line();
+                    int days;
+                    number = 0;
+                    //mcal = Calendar.getInstance();
+
+                    mcal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), 1);
+                    int month = mcal.get(Calendar.MONTH);
+
+                    if(month == 1 || month == 3 || month == 5 || month == 8 || month == 10){
+                        days = 30;
+                    }else{
+                        days = 31;
+                    }
+
+                    graphTitle.setText((month + 1) +"月のらぼちく時間");
+
+                    while(days > number){
+                        LinePoint linePoint = new LinePoint();
+
+                        if(dayData.lastIndexOf(String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR))) == -1){
+                            linePoint.setY(0); // 分単位
+                        }else {
+                            linePoint.setY(timeData.get(dayData.lastIndexOf(String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR)))) / (1000 * 60 * 60)); // 分単位
+                            ave += timeData.get(dayData.lastIndexOf(String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR)))) / (1000 * 60); // 分単位
+                        }
+                        linePoint.setX(number);
+                        linePoint.setColor(Color.parseColor("#9acd32"));
+                        mline.addPoint(linePoint);
+                        number++;
+                        if ((String.valueOf(year) + String.valueOf(mcal.get(Calendar.DAY_OF_YEAR))).equals(dayData.get(dayData.size()-1))){
+                            break;
+                        }
+                        mcal.add(Calendar.DAY_OF_MONTH, 1);
+                    }
+                    mline.setColor(Color.parseColor("#9acd32")); // 線のいろ
+                    //LineGraph graph = (LineGraph) findViewById(R.id.graph);
+                    graph.addLine(mline);
+                    graph.setRangeX(0, 31);
+                    graph.setRangeY(0, 24);
+
+                    ave = ave / days;
+                    average.setText("月平均: " + (ave / 60) + "時間" + (ave % 60) + "分");
+
+                    mcal.set(mcal.get(Calendar.YEAR), mcal.get(Calendar.MONTH), 1);
+                    graphx.setText("");
+                    for(int x = 0; x <= (days/2); x++) {
+                        if(mcal.get(Calendar.DAY_OF_MONTH) < 10){
+                            //graphx.setTextSize(40);
+                            graphx.append("      " + String.valueOf(String.valueOf(mcal.get(Calendar.DAY_OF_MONTH))) + " ");
+                        }else{
+
+                            graphx.append("     " + String.valueOf(String.valueOf(mcal.get(Calendar.DAY_OF_MONTH))) + "");
+                        }
+                        mcal.add(Calendar.DAY_OF_MONTH, 2);
+                    }
+
+
                 }else{
-                    int number = 0;
+                    graphTitle.setText("一週間のらぼちく時間");
+                    graphFlag = 0;
+                    int ave = 0;
+                    graph.removeAllLines();
+                    number = 0;
                     Line line = new Line();
                     if(timeData.size() > 6){
                         while(number < 7){
                             LinePoint linePoint = new LinePoint();
-                            linePoint.setY(timeData.get(timeData.size()- 7 + number) / (1000 * 60 * 60)); // 分単位
+                            linePoint.setY(timeData.get(timeData.size() - 7 + number) / (1000 * 60 * 60)); // 分単位
+                            ave += timeData.get(timeData.size() - 7 + number) / (1000 * 60);
                             linePoint.setX(number);
                             linePoint.setColor(Color.parseColor("#9acd32"));
                             line.addPoint(linePoint);
@@ -420,6 +547,7 @@ public class MainActivity extends Activity{
                         while (number < timeData.size()) {
                             LinePoint linePoint = new LinePoint();
                             linePoint.setY(timeData.get(number) / (1000 * 60 * 60)); // 分単位
+                            ave += timeData.get(number) / (1000 * 60);
                             linePoint.setX(number);
                             linePoint.setColor(Color.parseColor("#9acd32"));
                             line.addPoint(linePoint);
@@ -428,10 +556,14 @@ public class MainActivity extends Activity{
                     }
 
                     line.setColor(Color.parseColor("#9acd32")); // 線のいろ
-                    LineGraph graph = (LineGraph) findViewById(R.id.graph);
+                    //LineGraph graph = (LineGraph) findViewById(R.id.graph);
                     graph.addLine(line);
                     graph.setRangeX(0, 6.5f);
                     graph.setRangeY(0, 24);
+
+                    ave = ave / 7;
+                    average.setText("週平均: " + (ave / 60) + "時間" + (ave % 60) + "分");
+
                     Calendar gcal = Calendar.getInstance();
 
                     gcal.set(gcal.get(Calendar.YEAR), gcal.get(Calendar.MONTH), gcal.get(Calendar.DAY_OF_MONTH) - 6);
@@ -440,7 +572,7 @@ public class MainActivity extends Activity{
 
                     graphx.setText("");
                     for(int x = 0; x < 7; x++) {
-                        graphx.append("  " + String.valueOf(gmonth + 1) + "/" + String.valueOf(gday) + "          ");
+                        graphx.append("   " + String.valueOf(gmonth + 1) + "/" + String.valueOf(gday) + "           ");
                         gcal.add(Calendar.DAY_OF_MONTH, 1);
                         gmonth = gcal.get(Calendar.MONTH);
                         gday = gcal.get(Calendar.DAY_OF_MONTH);
@@ -463,13 +595,15 @@ public class MainActivity extends Activity{
         year = cal.get(Calendar.YEAR);
 
         //textView.setText(dayData.get(dayData.size()-1) + String.valueOf(year) + String.valueOf(today) + (dayData.get(dayData.size() - 1)).equals(String.valueOf(year) + String.valueOf(today)));
-        if((dayData.get(dayData.size() - 1)).equals(String.valueOf(year) + String.valueOf(today))){
-            timeData.set(timeData.size() - 1, (int)todayStaytime + timeData.get(timeData.size() - 1));
-            Log.d("onDisconnected", "equal data's date today");
-        }else{
-            timeData.add((int) todayStaytime);
-            dayData.add(String.valueOf(year) + String.valueOf(today));
-            Log.d("onDisconnected", "not equal");
+        if(connectFlag == 1) {
+            if ((dayData.get(dayData.size() - 1)).equals(String.valueOf(year) + String.valueOf(today))) {
+                timeData.set(timeData.size() - 1, (int) todayStaytime + timeData.get(timeData.size() - 1));
+                Log.d("onDisconnected", "equal data's date today");
+            } else {
+                timeData.add((int) todayStaytime);
+                dayData.add(String.valueOf(year) + String.valueOf(today));
+                Log.d("onDisconnected", "not equal");
+            }
         }
 
 
@@ -533,13 +667,59 @@ public class MainActivity extends Activity{
                     case CONNECTED:
                         manager = (WifiManager)getSystemService(WIFI_SERVICE);
                         info = manager.getConnectionInfo();
+
+
                         if(apData.indexOf(info.getSSID())!=-1) {
                             spendView.setText(sdf.format(time - starttime));
                             time = System.currentTimeMillis();
                             starttime = time;
+
+                            today = cal.get(Calendar.DAY_OF_YEAR);
+                            year = cal.get(Calendar.YEAR);
+                            if (dayData.get(dayData.size() - 1).equals(String.valueOf(year) + String.valueOf(today))) {
+                                savedTime = timeData.get(timeData.size() - 1);
+                            }else{
+                                savedTime = 0;
+                            }
                             loopEngine.start();
                             connectFlag = 1;
-                            Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
+
+                            Toast.makeText(getApplicationContext(), "labochiku" + savedTime, Toast.LENGTH_SHORT).show();
+
+                            if((savedTime) > 86400000) {
+                                editor.putInt("labochiku", 3);
+                                editor.commit();
+                            }else if((savedTime) > 43200000) {
+                                editor.putInt("labochiku", 2);
+                                editor.commit();
+                                //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+                                labochikuView.setImageResource(R.drawable.labo);
+                                labochikuView.invalidate();
+                                labochikuView.setOnClickListener(
+                                        new View.OnClickListener(){
+                                            public void onClick(View v){
+                                                if(labo == 0) {
+                                                    labofukiView.setVisibility(View.VISIBLE);
+                                                    //labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
+                                                    //labofukiView.invalidate();
+                                                    labo = 1;
+                                                }else{
+                                                    labofukiView.setVisibility(View.INVISIBLE);
+                                                    labo = 0;
+                                                }
+                                                //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                );
+                            }else if((savedTime) > 21600000) {
+                                editor.putInt("labochiku", 1);
+                                editor.commit();
+                                Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+                                labochikuView.setImageResource(R.drawable.labo);
+                                labochikuView.invalidate();
+                            }
+
+                            //Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
                         }
                         Log.d("wifi change", "CONNECTED");
                         break;
@@ -589,7 +769,27 @@ public class MainActivity extends Activity{
 
     public void update(){
         time = System.currentTimeMillis();
-        spendView.setText("今日のらぼちく時間\n" + sdf.format(time - starttime)); // 接続時間を計測
+        spendView.setText("今日のらぼちく時間\n" + sdf.format(time - starttime + savedTime)); // 接続時間を計測
+//        if((time - starttime + savedTime) > 86400000) {
+//            editor.putInt("labochiku", 3);
+//            editor.commit();
+//        }else if((time - starttime + savedTime) > 43200000){
+//            editor.putInt("labochiku", 2);
+//            editor.commit();
+//        }else if((time - starttime + savedTime) > 21600000){
+//            editor.putInt("labochiku", 1);
+//            editor.commit();
+//            Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    labochikuView.setImageResource(R.drawable.labo);
+//                    labochikuView.invalidate();
+//                }
+//            }).start();
+//
+//
+//        }
     }
 
 

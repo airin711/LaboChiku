@@ -19,11 +19,11 @@
 
     <TextView
         android:layout_width="739dp"
-        android:layout_height="124dp"
+        android:layout_height="96dp"
         android:id="@+id/ap_info"
         android:layout_row="1"
         android:layout_column="1"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:gravity="center" />
 
     <FrameLayout
@@ -43,8 +43,7 @@
         <TextView
             android:layout_width="392dp"
             android:layout_height="79dp"
-            android:text="一週間のらぼちく時間"
-            android:id="@+id/graph_text1"
+            android:id="@+id/graph_title"
             android:layout_gravity="center_horizontal|top"
             android:textIsSelectable="false"
             android:textSize="30sp"
@@ -75,8 +74,8 @@
             android:layout_gravity="center" />
 
         <TextView
-            android:layout_width="161dp"
-            android:layout_height="141dp"
+            android:layout_width="212dp"
+            android:layout_height="125dp"
             android:id="@+id/average"
             android:layout_gravity="right|top"
             android:gravity="bottom|left"
@@ -114,6 +113,34 @@
             android:id="@+id/value"
             android:layout_gravity="center" />
 
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="実績"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textSize="40sp"
+            android:gravity="center_horizontal|top" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:layout_row="3"
+        android:layout_column="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labochikuView"
+            android:layout_gravity="left|top" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labofuki"
+            android:layout_gravity="center_horizontal|top" />
     </FrameLayout>
 
     <Button

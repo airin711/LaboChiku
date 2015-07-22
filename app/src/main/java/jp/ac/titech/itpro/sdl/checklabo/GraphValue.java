@@ -44,6 +44,11 @@ public class GraphValue extends View {
         Log.d("gvalue", "value= " + value);
     }
 
+    public void resetValue(){
+        value = "";
+        postInvalidate();
+    }
+
     @Override
     public void onDraw(Canvas canvas) {
 
