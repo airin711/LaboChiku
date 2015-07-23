@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jar="/Users/mokona/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-1b8297b10b8a1d239981a1c061ab62d4933dce40.jar" />
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-8bf472ab834513b2c00f1ee437ea2e8fee7f36ad.jar" />
     </item>
     <item
         jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
@@ -16,11 +16,11 @@
         <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-327573b8d8cbeca8372707f3835988901a525547.jar" />
     </item>
     <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-225488e25ef43025b45d2494efb4ae1744f4d68a.jar" />
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-26a34e036cacc67fb2127df83d9e505e11eb4627.jar" />
     </item>
     <item
         jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
@@ -30,165 +30,11 @@
         <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-7d389dabe03dca67c2f154cc7bf47883bdb41834.jar" />
     </item>
     <item
-        jar="/Users/mokona/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-8bf472ab834513b2c00f1ee437ea2e8fee7f36ad.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-26a34e036cacc67fb2127df83d9e505e11eb4627.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-1d596deb67b273ab9dcd3f9990ecb6ad2ebed3cf.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-85763def5778789e7e74c1a7faa3f886bb9e1b76.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-42b68b8fe4fcfffb61ae15d86345432dd04d1b95.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-1e960b45ebcb7776b782936a952781fabf6fba61.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-83dcf38d8ca2844721099dc10ee419fe6513891a.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-c7a9e85567c33fbfbf8c0bc557d1b3954670c7e9.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-8cf5c3dc0e16fcefdf6df538ae27b463e2fef5e4.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-d8428ee2de1b2d4638e5f50e30b38c1ff7c8891b.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-a01f232610ca8d82d6af7cffeba7379cdf06ee4a.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-4f59366543f8aa4a083c70d5597e045e98cbd702.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/LaboChiku/HoloGraphLibrary/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="13405c8953ca9cf9a30aeefc9f23a587a99bc41a">
-        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/classes-1c0b1e19a633e776858dbc84a178445d02a535d7.jar" />
-    </item>
-    <item
         jar="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
         <dex dex="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/pre-dexed/debug/classes-55ddc052c35a8d971e90e49345f483e0d4aecce6.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/pre-dexed/debug/classes-9f53e6959cf8a97c7ebd8c96e4c426bf1dde716c.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/classes-d27a3d4f9a061a426995fbe20b0854a120d68931.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-161ea5cdb0775df4ccbefd94d898f7cd49e4ad7a.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-94239254f9510287dc96a59f983a40df92c0725a.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-6ecfd9f1d2bcb0f42f5d546f05d6749133287479.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-06de1ff8048a1fe31c6611a50b069b61b87e15d6.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-df2bdf7917743d6c5889fbacd6f359404c815dfe.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-2223ddf3c68808052fbbd41a31b68114233750eb.jar" />
-    </item>
-    <item
-        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-aba8e8c67ca6ba22aed2d9ef38a162fffc6967bc.jar" />
     </item>
     <item
         jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
@@ -205,11 +51,144 @@
         <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-d7439b857daef99518ed67034090b46ab38880cb.jar" />
     </item>
     <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-a01f232610ca8d82d6af7cffeba7379cdf06ee4a.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-4f59366543f8aa4a083c70d5597e045e98cbd702.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-8cf5c3dc0e16fcefdf6df538ae27b463e2fef5e4.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-d8428ee2de1b2d4638e5f50e30b38c1ff7c8891b.jar" />
+    </item>
+    <item
         jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
         <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-4c658f163e729ae51950c13765e09b708f5adf21.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-1d596deb67b273ab9dcd3f9990ecb6ad2ebed3cf.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-225488e25ef43025b45d2494efb4ae1744f4d68a.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-1b8297b10b8a1d239981a1c061ab62d4933dce40.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-1e960b45ebcb7776b782936a952781fabf6fba61.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-c7a9e85567c33fbfbf8c0bc557d1b3954670c7e9.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/classes-9f40970e3573e2b52d0903f65117597465aad4ac.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-161ea5cdb0775df4ccbefd94d898f7cd49e4ad7a.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-94239254f9510287dc96a59f983a40df92c0725a.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/classes-d27a3d4f9a061a426995fbe20b0854a120d68931.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-6ecfd9f1d2bcb0f42f5d546f05d6749133287479.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/pre-dexed/debug/classes-9f53e6959cf8a97c7ebd8c96e4c426bf1dde716c.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/LaboChiku/HoloGraphLibrary/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ef8ad196ce5b417702b934819af1921b4f7607b5">
+        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/classes-1c0b1e19a633e776858dbc84a178445d02a535d7.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-2223ddf3c68808052fbbd41a31b68114233750eb.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-aba8e8c67ca6ba22aed2d9ef38a162fffc6967bc.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-83dcf38d8ca2844721099dc10ee419fe6513891a.jar" />
     </item>
     <item
         jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
@@ -226,11 +205,32 @@
         <dex dex="/Users/mokona/AndroidStudioProjects/CheckLabo/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-4546888d4633289dcfa9301335e1793a6446be33.jar" />
     </item>
     <item
-        jar="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/mokona/AndroidStudioProjects/LaboChiku/app/build/intermediates/pre-dexed/debug/classes-9f40970e3573e2b52d0903f65117597465aad4ac.jar" />
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-06de1ff8048a1fe31c6611a50b069b61b87e15d6.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-df2bdf7917743d6c5889fbacd6f359404c815dfe.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-42b68b8fe4fcfffb61ae15d86345432dd04d1b95.jar" />
+    </item>
+    <item
+        jar="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/mokona/AndroidStudioProjects/ShowAddr/app/build/intermediates/pre-dexed/debug/classes-85763def5778789e7e74c1a7faa3f886bb9e1b76.jar" />
     </item>
 
 </items>

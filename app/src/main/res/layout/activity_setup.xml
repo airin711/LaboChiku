@@ -56,7 +56,6 @@
     <TextView
         android:layout_width="550dp"
         android:layout_height="47dp"
-        android:text="Registered home Wifi"
         android:id="@+id/textView"
         android:layout_row="4"
         android:layout_column="3"

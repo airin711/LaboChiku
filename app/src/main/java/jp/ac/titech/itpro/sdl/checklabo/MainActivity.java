@@ -56,6 +56,12 @@ public class MainActivity extends Activity{
     ImageView labochikuView;
     ImageView labofukiView;
 
+    ImageView labogurashiView;
+    ImageView labogurashifukiView;
+
+    ImageView ilovelabView;
+    ImageView ilovelabfukiView;
+
     LineGraph graph;
     GraphValue value;
 
@@ -71,13 +77,14 @@ public class MainActivity extends Activity{
     private long savedTime;
     private int connectFlag;
     private int graphFlag;
-    private int labo;
 
-    private int kanzume;
+
     private int labochiku;
     private int labogurashi;
     private int ilovelab;
 
+    private int labohaku; // 1時から6時にいることを確認するためのフラグ
+    private int labo; // 吹き出しが見えてるか見えてないか
 
     String[] apInfo = new String[4];
     ArrayList<String> apData = new ArrayList<String>();
@@ -124,17 +131,78 @@ public class MainActivity extends Activity{
         average = (TextView)findViewById(R.id.average);
         value = (GraphValue)findViewById(R.id.value);
         graphTitle = (TextView)findViewById(R.id.graph_title);
-        labochikuView = (ImageView)findViewById(R.id.labochikuView);
-        labofukiView = (ImageView)findViewById(R.id.labofuki);
 
-        labofukiView.setVisibility(View.INVISIBLE);
-        labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
-        labofukiView.invalidate();
-        labo = 0;
+        labofukiView = (ImageView)findViewById(R.id.labofuki);
+        labogurashifukiView = (ImageView)findViewById(R.id.labogurashifuki);
+        ilovelabfukiView = (ImageView)findViewById(R.id.ilovelabfuki);
+        labochikuView = (ImageView)findViewById(R.id.labochikuView);
+        labogurashiView = (ImageView)findViewById(R.id.labogurashiView);
+        ilovelabView = (ImageView)findViewById(R.id.ilovelabView);
+
 
 
         prefer = getSharedPreferences("PREF", MODE_PRIVATE);
         editor = prefer.edit();
+
+        labochiku = prefer.getInt("labochiku", 0);
+        labogurashi = prefer.getInt("labogurashi", 0);
+        ilovelab = prefer.getInt("ilovelab", 0);
+
+        if(labochiku == 0) {
+            //labochikuView.setVisibility(View.INVISIBLE);
+            labochikuView.setImageResource(R.drawable.labochiku);
+            labochikuView.setAlpha(100f);
+        }else if(labochiku == 1){
+            labochikuView.setImageResource(R.drawable.labochiku_silver);
+        }else if(labochiku == 2){
+            labochikuView.setImageResource(R.drawable.labochiku_gold);
+        }else if(labochiku == 3){
+            labochikuView.setImageResource(R.drawable.labochiku_black);
+        }
+        labochikuView.invalidate();
+
+        //labogurashiView.setVisibility(View.INVISIBLE);
+
+        if(labogurashi == 0) {
+            //labochikuView.setVisibility(View.INVISIBLE);
+            labogurashiView.setImageResource(R.drawable.labogurashi);
+            labogurashiView.setAlpha(100f);
+        }else if(labogurashi == 1){
+            labogurashiView.setImageResource(R.drawable.labogurashi_silver);
+        }else if(labogurashi == 2){
+            labogurashiView.setImageResource(R.drawable.labogurashi_gold);
+        }else if(labogurashi > 6){
+            labogurashiView.setImageResource(R.drawable.labogurashi_black);
+        }
+        labogurashiView.invalidate();
+
+        //ilovelabView.setVisibility(View.INVISIBLE);
+        //ilovelabView.setImageResource(R.drawable.ilovelab);
+        //ilovelabView.invalidate();
+
+        // 吹き出したち
+        labofukiView.setVisibility(View.INVISIBLE);
+        labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
+        labofukiView.bringToFront();
+        labofukiView.invalidate();
+
+        labogurashifukiView.setVisibility(View.INVISIBLE);
+        labogurashifukiView.setImageResource(R.drawable.labogurashi_fukidashi);
+        labogurashifukiView.bringToFront();
+        labogurashifukiView.invalidate();
+
+        ilovelabfukiView.setVisibility(View.INVISIBLE);
+        ilovelabfukiView.setImageResource(R.drawable.ilovelab_fukidashi);
+        ilovelabfukiView.bringToFront();
+        ilovelabfukiView.invalidate();
+
+
+
+        labo = 0; // labochikuの吹き出しが出ているかどうか
+        labohaku = 0; // 1時になったら1になる
+
+
+
 
 
         //for(int i = 0; i < 20; i++){
@@ -154,6 +222,56 @@ public class MainActivity extends Activity{
                 startActivity(intent);
             }
         });
+
+        labochikuView.setOnClickListener(
+                    new View.OnClickListener() {
+                        public void onClick(View v) {
+                            if (labo == 0) {
+                                labofukiView.setVisibility(View.VISIBLE);
+                                //labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
+                                //labofukiView.invalidate();
+                                labo = 1;
+                            } else if(labo == 1){
+                                labofukiView.setVisibility(View.INVISIBLE);
+                                labo = 0;
+                            }
+                            //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+        );
+
+        labogurashiView.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View v) {
+                        if (labo == 0) {
+                            labogurashifukiView.setVisibility(View.VISIBLE);
+                            //labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
+                            //labofukiView.invalidate();
+                            labo = 2;
+                        } else if(labo == 2){
+                            labogurashifukiView.setVisibility(View.INVISIBLE);
+                            labo = 0;
+                        }
+                        //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        ilovelabView.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View v) {
+                        if (labo == 0) {
+                            ilovelabfukiView.setVisibility(View.VISIBLE);
+                            //labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
+                            //labofukiView.invalidate();
+                            labo = 3;
+                        } else if(labo == 3){
+                            ilovelabfukiView.setVisibility(View.INVISIBLE);
+                            labo = 0;
+                        }
+                        //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
 
 
         time = System.currentTimeMillis();
@@ -368,6 +486,69 @@ public class MainActivity extends Activity{
                 Log.d("FileAccess", "can't write!");
             }
         }
+
+        // I love lab 判定
+        int lovelab = 0;
+        if(ilovelab == 0){
+            for(int i = 1; i < 7; i++){
+                if(timeData.get(timeData.size()-i) == 0){
+                    lovelab = 1;
+                    break;
+                }
+            }
+            if(lovelab == 0){
+                ilovelab = 1;
+                editor.putInt("ilovelab", 1);
+                editor.commit();
+                //ilovelabView.setVisibility(View.VISIBLE);
+            }
+         }else if(ilovelab == 1){
+            for(int i = 1; i < 14; i++){
+                if(timeData.get(timeData.size()-i) == 0){
+                    lovelab = 1;
+                    break;
+                }
+            }
+            if(lovelab == 0){
+                ilovelab = 2;
+                editor.putInt("ilovelab", 2);
+                editor.commit();
+                //ilovelabView.setVisibility(View.VISIBLE);
+            }
+        }else if(ilovelab == 2){
+            for(int i = 1; i < 30; i++){
+                if(timeData.get(timeData.size()-i) == 0){
+                    lovelab = 1;
+                    break;
+                }
+            }
+            if(lovelab == 0){
+                ilovelab = 3;
+                editor.putInt("ilovelab", 3);
+                editor.commit();
+                //ilovelabView.setVisibility(View.VISIBLE);
+            }
+        }
+
+        labogurashi = 1;
+        editor.putInt("labogurashi", 1);
+        editor.commit();
+
+        if(ilovelab == 0) {
+            //labochikuView.setVisibility(View.INVISIBLE);
+            ilovelabView.setImageResource(R.drawable.ilovelab);
+            ilovelabView.setAlpha(100f);
+        }else if(ilovelab == 1){
+            ilovelabView.setImageResource(R.drawable.ilovelab_silver);
+        }else if(ilovelab == 2){
+            ilovelabView.setImageResource(R.drawable.ilovelab_gold);
+        }else if(ilovelab == 3){
+            ilovelabView.setImageResource(R.drawable.ilovelab_black);
+        }
+        ilovelabView.invalidate();
+
+
+
 
         //int kanzume = prefer.getInt("kanzume", 0);
         //Toast.makeText(getApplicationContext(), "kanzume " + kanzume, Toast.LENGTH_LONG).show();
@@ -599,6 +780,19 @@ public class MainActivity extends Activity{
             if ((dayData.get(dayData.size() - 1)).equals(String.valueOf(year) + String.valueOf(today))) {
                 timeData.set(timeData.size() - 1, (int) todayStaytime + timeData.get(timeData.size() - 1));
                 Log.d("onDisconnected", "equal data's date today");
+            }else if(dayData.size() != 0){
+                timeData.add((int)todayStaytime);
+                dayData.add(String.valueOf(year) + String.valueOf(today));
+                int cnt = 1;
+                while(true){
+                    if(dayData.get(dayData.size() - 1).equals(String.valueOf(year) + String.valueOf(today-cnt))){
+                        break;
+                    }else{
+                        timeData.add(0);
+                        dayData.add(String.valueOf(year) + String.valueOf(today-cnt));
+                        cnt++;
+                    }
+                }
             } else {
                 timeData.add((int) todayStaytime);
                 dayData.add(String.valueOf(year) + String.valueOf(today));
@@ -686,40 +880,8 @@ public class MainActivity extends Activity{
 
                             Toast.makeText(getApplicationContext(), "labochiku" + savedTime, Toast.LENGTH_SHORT).show();
 
-                            if((savedTime) > 86400000) {
-                                editor.putInt("labochiku", 3);
-                                editor.commit();
-                            }else if((savedTime) > 43200000) {
-                                editor.putInt("labochiku", 2);
-                                editor.commit();
-                                //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
-                                labochikuView.setImageResource(R.drawable.labo);
-                                labochikuView.invalidate();
-                                labochikuView.setOnClickListener(
-                                        new View.OnClickListener(){
-                                            public void onClick(View v){
-                                                if(labo == 0) {
-                                                    labofukiView.setVisibility(View.VISIBLE);
-                                                    //labofukiView.setImageResource(R.drawable.labohiku_fukidashi);
-                                                    //labofukiView.invalidate();
-                                                    labo = 1;
-                                                }else{
-                                                    labofukiView.setVisibility(View.INVISIBLE);
-                                                    labo = 0;
-                                                }
-                                                //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }
-                                );
-                            }else if((savedTime) > 21600000) {
-                                editor.putInt("labochiku", 1);
-                                editor.commit();
-                                Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
-                                labochikuView.setImageResource(R.drawable.labo);
-                                labochikuView.invalidate();
-                            }
 
-                            //Toast.makeText(getApplicationContext(), "connected!", Toast.LENGTH_SHORT).show();
+
                         }
                         Log.d("wifi change", "CONNECTED");
                         break;
@@ -746,12 +908,26 @@ public class MainActivity extends Activity{
                                 //timeView.append(String.valueOf(dayData.get(dayData.size() - 1)) + "\n");
                                 //timeView.append(String.valueOf("time = " + timeData.get(timeData.size() - 1)) + "\n");
                                 Log.d("onDisconnected", "equal data's date today");
+                            }else if(dayData.size() != 0){
+                                timeData.add((int)todayStaytime);
+                                dayData.add(String.valueOf(year) + String.valueOf(today));
+                                int cnt = 1;
+                                while(true){
+                                    if(dayData.get(dayData.size() - 1).equals(String.valueOf(year) + String.valueOf(today-cnt))){
+                                        break;
+                                    }else{
+                                        timeData.add(0);
+                                        dayData.add(String.valueOf(year) + String.valueOf(today-cnt));
+                                        cnt++;
+                                    }
+                                }
                             } else {
                                 timeData.add((int)todayStaytime);
                                 dayData.add(String.valueOf(year) + String.valueOf(today));
                                 //timeView.append(String.valueOf(dayData.get(dayData.size() - 2)) + "yesterday\n");
                                 Log.d("onDisconnected", "not equal");
                             }
+
 
                             loopEngine.stop();
                             //Toast.makeText(getApplicationContext(), "discon
@@ -770,26 +946,37 @@ public class MainActivity extends Activity{
     public void update(){
         time = System.currentTimeMillis();
         spendView.setText("今日のらぼちく時間\n" + sdf.format(time - starttime + savedTime)); // 接続時間を計測
-//        if((time - starttime + savedTime) > 86400000) {
-//            editor.putInt("labochiku", 3);
-//            editor.commit();
-//        }else if((time - starttime + savedTime) > 43200000){
-//            editor.putInt("labochiku", 2);
-//            editor.commit();
-//        }else if((time - starttime + savedTime) > 21600000){
-//            editor.putInt("labochiku", 1);
-//            editor.commit();
-//            Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
-//            new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    labochikuView.setImageResource(R.drawable.labo);
-//                    labochikuView.invalidate();
-//                }
-//            }).start();
-//
-//
-//        }
+        if((time - starttime + savedTime) > 86400000 && labochiku == 2) {
+            editor.putInt("labochiku", 3);
+            editor.commit();
+            labochikuView.setVisibility(View.VISIBLE);
+            labochiku = 3;
+
+        }else if((time - starttime + savedTime) > 43200000 && labochiku == 1){
+            editor.putInt("labochiku", 2);
+            editor.commit();
+            labochikuView.setVisibility(View.VISIBLE);
+            labochiku = 2;
+
+        }else if((time - starttime + savedTime) > 21600000 && labochiku == 0) {
+            editor.putInt("labochiku", 1);
+            editor.commit();
+            labochikuView.setVisibility(View.VISIBLE);
+            labochiku = 1;
+            //Toast.makeText(getApplicationContext(), "labochiku", Toast.LENGTH_SHORT).show();
+
+        }
+
+
+        if(labohaku == 0 && cal.get(Calendar.HOUR_OF_DAY) == 1){
+            labohaku = 1;
+        }else if(labohaku == 1 && cal.get(Calendar.HOUR_OF_DAY) == 6){
+            editor.putInt("labogurashi", labogurashi+1);
+            editor.commit();
+            //labogurashiView.setVisibility(View.VISIBLE);
+            labogurashi += 1;
+            labohaku = 0;
+        }
     }
 
 

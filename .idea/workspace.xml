@@ -12,23 +12,34 @@
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
         <config>
           <state>Portrait</state>
-          <theme>@style/AppTheme</theme>
+          <theme>@style/MyAppTheme</theme>
         </config>
       </layout>
     </layouts>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="809a632c-b8aa-4028-b6d5-00bd38cf3e47" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/manifests/tmp/manifestMerger3775646229425877671.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/outputs/aar/HoloGraphLibrary-debug.aar" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/outputs/aar/HoloGraphLibrary-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/outputs/aar/HoloGraphLibrary-release.aar" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/outputs/aar/HoloGraphLibrary-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/classes/debug/com/echo/holographlibrary/LineGraph.class" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/classes/debug/com/echo/holographlibrary/LineGraph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/bundles/release/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/HoloGraphLibrary/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/GraphValue.java" afterPath="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/GraphValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LaboChiku.iml" afterPath="$PROJECT_DIR$/LaboChiku.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LaboChiku.iws" />
@@ -162,12 +173,72 @@
     <leaf>
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.2">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="color.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myStyle.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/myStyle.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -176,113 +247,39 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23399015">
-              <caret line="442" column="53" selection-start-line="442" selection-start-column="53" selection-end-line="442" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.21753608">
+              <caret line="532" column="24" selection-start-line="532" selection-start-column="24" selection-end-line="532" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2263#2271#0" expanded="true" />
-                <element signature="e#2384#2393#0" expanded="true" />
-                <element signature="e#2444#2452#0" expanded="true" />
-                <element signature="e#4443#5110#0" expanded="true" />
-                <element signature="e#5109#5110#0" expanded="true" />
-                <element signature="e#15429#16779#0" expanded="true" />
-                <element signature="e#16778#16779#0" expanded="true" />
-                <element signature="e#16878#22875#0" expanded="true" />
-                <element signature="e#22874#22875#0" expanded="true" />
-                <element signature="e#25370#32051#0" expanded="true" />
-                <element signature="e#27816#28815#0" expanded="true" />
-                <element signature="e#28814#28815#0" expanded="true" />
-                <element signature="e#32050#32051#0" expanded="true" />
+                <element signature="e#2439#2447#0" expanded="true" />
+                <element signature="e#2560#2569#0" expanded="true" />
+                <element signature="e#2620#2628#0" expanded="true" />
+                <element signature="e#6988#7655#0" expanded="true" />
+                <element signature="e#7654#7655#0" expanded="true" />
+                <element signature="e#7721#8478#0" expanded="true" />
+                <element signature="e#8477#8478#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="labo.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/labo.png">
-          <provider selected="true" editor-type-id="images">
+      <file leaf-file-name="activity_setup.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/GraphValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#483#484#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinePoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HoloGraphLibrary/src/com/echo/holographlibrary/LinePoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LineGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HoloGraphLibrary/src/com/echo/holographlibrary/LineGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-219.44444">
-              <caret line="508" column="26" selection-start-line="508" selection-start-column="26" selection-end-line="508" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#20786#0" expanded="true" />
-                <element signature="e#1922#1928#0" expanded="true" />
-                <element signature="e#2689#2690#0" expanded="true" />
-                <element signature="e#2724#2725#0" expanded="true" />
-                <element signature="e#2785#2786#0" expanded="true" />
-                <element signature="e#2824#2825#0" expanded="true" />
-                <element signature="e#3695#3696#0" expanded="true" />
-                <element signature="e#3726#3727#0" expanded="true" />
-                <element signature="e#3784#3785#0" expanded="true" />
-                <element signature="e#3827#3828#0" expanded="true" />
-                <element signature="e#4392#4393#0" expanded="true" />
-                <element signature="e#4427#4428#0" expanded="true" />
-                <element signature="e#4472#4473#0" expanded="true" />
-                <element signature="e#4505#4506#0" expanded="true" />
-                <element signature="e#7172#7173#0" expanded="true" />
-                <element signature="e#7201#7202#0" expanded="true" />
-                <element signature="e#7352#7353#0" expanded="true" />
-                <element signature="e#7386#7387#0" expanded="true" />
-                <element signature="e#7437#7438#0" expanded="true" />
-                <element signature="e#7467#7468#0" expanded="true" />
-                <element signature="e#8725#8726#0" expanded="true" />
-                <element signature="e#8753#8754#0" expanded="true" />
-                <element signature="e#8786#8787#0" expanded="true" />
-                <element signature="e#8814#8815#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Line.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HoloGraphLibrary/src/com/echo/holographlibrary/Line.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradle.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-              <folding />
-            </state>
+      <file leaf-file-name="ilovelab_fukidashi.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ilovelab_fukidashi.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -292,8 +289,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -2293,9 +2291,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/SetupActivity.java" />
         <option value="$PROJECT_DIR$/gradle.properties" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/switch_bg.xml" />
@@ -2305,6 +2300,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/c_thumb.xml" />
         <option value="$PROJECT_DIR$/HoloGraphLibrary/src/com/echo/holographlibrary/LineGraph.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/GraphValue.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/actionbar_back.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/myStyle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java" />
       </list>
@@ -2315,6 +2318,13 @@
       <facet id="LaboChiku/invalid/Java-Gradle" />
     </ignored-facets>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
@@ -2322,7 +2332,7 @@
     <option name="x" value="1280" />
     <option name="y" value="23" />
     <option name="width" value="2560" />
-    <option name="height" value="1413" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -2347,12 +2357,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2513,7 +2518,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
+              <option name="myItemId" value="values-v21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboChiku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboChiku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboChiku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LaboChiku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2585,6 +2650,11 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2811,7 +2881,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="2560" height="1413" extended-state="6" />
+    <frame x="1280" y="23" width="2560" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2820,20 +2890,20 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4155251" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.018504241" sideWeight="0.5063543" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09610802" sideWeight="0.11861744" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2859339" sideWeight="0.5095314" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09610802" sideWeight="0.12809473" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289777" sideWeight="0.4952343" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.018504241" sideWeight="0.49364576" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289777" sideWeight="0.49046862" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2859339" sideWeight="0.49046862" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09610802" sideWeight="0.8813826" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820907" sideWeight="0.49364576" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09610802" sideWeight="0.87190527" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820907" sideWeight="0.49205717" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2864,91 +2934,14 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2263#2271#0" expanded="true" />
-            <element signature="e#2384#2393#0" expanded="true" />
-            <element signature="e#2444#2452#0" expanded="true" />
-            <element signature="e#4443#5110#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#15429#16779#0" expanded="true" />
-            <element signature="e#16778#16779#0" expanded="true" />
-            <element signature="e#16878#22875#0" expanded="true" />
-            <element signature="e#22874#22875#0" expanded="true" />
-            <element signature="e#25370#32051#0" expanded="true" />
-            <element signature="e#27816#28815#0" expanded="true" />
-            <element signature="e#28814#28815#0" expanded="true" />
-            <element signature="e#32050#32051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/SetupActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1590#2032#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2171#3189#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3332#4136#0" expanded="false" />
-            <element signature="e#4135#4136#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="84" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="37" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
@@ -2957,19 +2950,13 @@
           <caret line="232" column="26" selection-start-line="232" selection-start-column="26" selection-end-line="232" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2263#2271#0" expanded="true" />
-            <element signature="e#2384#2393#0" expanded="true" />
-            <element signature="e#2444#2452#0" expanded="true" />
-            <element signature="e#4443#5110#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#15429#16779#0" expanded="true" />
-            <element signature="e#16778#16779#0" expanded="true" />
-            <element signature="e#16878#22875#0" expanded="true" />
-            <element signature="e#22874#22875#0" expanded="true" />
-            <element signature="e#25370#32051#0" expanded="true" />
-            <element signature="e#27816#28815#0" expanded="true" />
-            <element signature="e#28814#28815#0" expanded="true" />
-            <element signature="e#32050#32051#0" expanded="true" />
+            <element signature="e#2439#2447#0" expanded="true" />
+            <element signature="e#2560#2569#0" expanded="true" />
+            <element signature="e#2620#2628#0" expanded="true" />
+            <element signature="e#6988#7655#0" expanded="true" />
+            <element signature="e#7654#7655#0" expanded="true" />
+            <element signature="e#7721#8478#0" expanded="true" />
+            <element signature="e#8477#8478#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2978,15 +2965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1590#2032#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2171#3189#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3332#4136#0" expanded="false" />
-            <element signature="e#4135#4136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3007,25 +2985,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="37" selection-end-column="39" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
@@ -3034,19 +3012,13 @@
           <caret line="205" column="41" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2263#2271#0" expanded="true" />
-            <element signature="e#2384#2393#0" expanded="true" />
-            <element signature="e#2444#2452#0" expanded="true" />
-            <element signature="e#4443#5110#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#15429#16779#0" expanded="true" />
-            <element signature="e#16778#16779#0" expanded="true" />
-            <element signature="e#16878#22875#0" expanded="true" />
-            <element signature="e#22874#22875#0" expanded="true" />
-            <element signature="e#25370#32051#0" expanded="true" />
-            <element signature="e#27816#28815#0" expanded="true" />
-            <element signature="e#28814#28815#0" expanded="true" />
-            <element signature="e#32050#32051#0" expanded="true" />
+            <element signature="e#2439#2447#0" expanded="true" />
+            <element signature="e#2560#2569#0" expanded="true" />
+            <element signature="e#2620#2628#0" expanded="true" />
+            <element signature="e#6988#7655#0" expanded="true" />
+            <element signature="e#7654#7655#0" expanded="true" />
+            <element signature="e#7721#8478#0" expanded="true" />
+            <element signature="e#8477#8478#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3055,15 +3027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="96" selection-start-line="82" selection-start-column="96" selection-end-line="82" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1590#2032#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2171#3189#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3332#4136#0" expanded="false" />
-            <element signature="e#4135#4136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3084,25 +3047,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="37" selection-end-column="39" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
@@ -3111,19 +3074,13 @@
           <caret line="205" column="41" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2263#2271#0" expanded="true" />
-            <element signature="e#2384#2393#0" expanded="true" />
-            <element signature="e#2444#2452#0" expanded="true" />
-            <element signature="e#4443#5110#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#15429#16779#0" expanded="true" />
-            <element signature="e#16778#16779#0" expanded="true" />
-            <element signature="e#16878#22875#0" expanded="true" />
-            <element signature="e#22874#22875#0" expanded="true" />
-            <element signature="e#25370#32051#0" expanded="true" />
-            <element signature="e#27816#28815#0" expanded="true" />
-            <element signature="e#28814#28815#0" expanded="true" />
-            <element signature="e#32050#32051#0" expanded="true" />
+            <element signature="e#2439#2447#0" expanded="true" />
+            <element signature="e#2560#2569#0" expanded="true" />
+            <element signature="e#2620#2628#0" expanded="true" />
+            <element signature="e#6988#7655#0" expanded="true" />
+            <element signature="e#7654#7655#0" expanded="true" />
+            <element signature="e#7721#8478#0" expanded="true" />
+            <element signature="e#8477#8478#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3132,15 +3089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="82" column="96" selection-start-line="82" selection-start-column="96" selection-end-line="82" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1590#2032#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2171#3189#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3332#4136#0" expanded="false" />
-            <element signature="e#4135#4136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3161,25 +3109,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
@@ -3188,19 +3136,13 @@
           <caret line="83" column="77" selection-start-line="83" selection-start-column="77" selection-end-line="83" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2263#2271#0" expanded="true" />
-            <element signature="e#2384#2393#0" expanded="true" />
-            <element signature="e#2444#2452#0" expanded="true" />
-            <element signature="e#4443#5110#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#15429#16779#0" expanded="true" />
-            <element signature="e#16778#16779#0" expanded="true" />
-            <element signature="e#16878#22875#0" expanded="true" />
-            <element signature="e#22874#22875#0" expanded="true" />
-            <element signature="e#25370#32051#0" expanded="true" />
-            <element signature="e#27816#28815#0" expanded="true" />
-            <element signature="e#28814#28815#0" expanded="true" />
-            <element signature="e#32050#32051#0" expanded="true" />
+            <element signature="e#2439#2447#0" expanded="true" />
+            <element signature="e#2560#2569#0" expanded="true" />
+            <element signature="e#2620#2628#0" expanded="true" />
+            <element signature="e#6988#7655#0" expanded="true" />
+            <element signature="e#7654#7655#0" expanded="true" />
+            <element signature="e#7721#8478#0" expanded="true" />
+            <element signature="e#8477#8478#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3209,15 +3151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1590#2032#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2171#3189#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3332#4136#0" expanded="false" />
-            <element signature="e#4135#4136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3245,27 +3178,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="84" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3276,30 +3192,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/SetupActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1590#2032#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2171#3189#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3332#4136#0" expanded="false" />
-            <element signature="e#4135#4136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3307,7 +3203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3315,7 +3210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3355,7 +3249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3430303">
           <caret line="2433" column="13" selection-start-line="2433" selection-start-column="13" selection-end-line="2433" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3385,33 +3278,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HoloGraphLibrary/src/com/echo/holographlibrary/LineGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-219.44444">
+        <state vertical-scroll-proportion="0.0">
           <caret line="508" column="26" selection-start-line="508" selection-start-column="26" selection-end-line="508" selection-end-column="26" />
           <folding>
-            <element signature="e#0#20786#0" expanded="true" />
-            <element signature="e#1922#1928#0" expanded="true" />
-            <element signature="e#2689#2690#0" expanded="true" />
-            <element signature="e#2724#2725#0" expanded="true" />
-            <element signature="e#2785#2786#0" expanded="true" />
-            <element signature="e#2824#2825#0" expanded="true" />
-            <element signature="e#3695#3696#0" expanded="true" />
-            <element signature="e#3726#3727#0" expanded="true" />
-            <element signature="e#3784#3785#0" expanded="true" />
-            <element signature="e#3827#3828#0" expanded="true" />
-            <element signature="e#4392#4393#0" expanded="true" />
-            <element signature="e#4427#4428#0" expanded="true" />
-            <element signature="e#4472#4473#0" expanded="true" />
-            <element signature="e#4505#4506#0" expanded="true" />
-            <element signature="e#7172#7173#0" expanded="true" />
-            <element signature="e#7201#7202#0" expanded="true" />
-            <element signature="e#7352#7353#0" expanded="true" />
-            <element signature="e#7386#7387#0" expanded="true" />
-            <element signature="e#7437#7438#0" expanded="true" />
-            <element signature="e#7467#7468#0" expanded="true" />
-            <element signature="e#8725#8726#0" expanded="true" />
-            <element signature="e#8753#8754#0" expanded="true" />
-            <element signature="e#8786#8787#0" expanded="true" />
-            <element signature="e#8814#8815#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4543#4544#0" expanded="false" />
+            <element signature="e#4578#4579#0" expanded="false" />
+            <element signature="e#4623#4624#0" expanded="false" />
+            <element signature="e#4656#4657#0" expanded="false" />
+            <element signature="e#7505#7506#0" expanded="false" />
+            <element signature="e#7545#7546#0" expanded="false" />
+            <element signature="e#7573#7574#0" expanded="false" />
+            <element signature="e#7609#7610#0" expanded="false" />
+            <element signature="e#8847#8848#0" expanded="false" />
+            <element signature="e#8875#8876#0" expanded="false" />
+            <element signature="e#20631#20632#0" expanded="false" />
+            <element signature="e#20667#20668#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3435,36 +3317,102 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/actionbar_back.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/myStyle.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ilovelab_fukidashi.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setup.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.2">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/jp/ac/titech/itpro/sdl/checklabo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23399015">
-          <caret line="442" column="53" selection-start-line="442" selection-start-column="53" selection-end-line="442" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.21753608">
+          <caret line="532" column="24" selection-start-line="532" selection-start-column="24" selection-end-line="532" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2263#2271#0" expanded="true" />
-            <element signature="e#2384#2393#0" expanded="true" />
-            <element signature="e#2444#2452#0" expanded="true" />
-            <element signature="e#4443#5110#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#15429#16779#0" expanded="true" />
-            <element signature="e#16778#16779#0" expanded="true" />
-            <element signature="e#16878#22875#0" expanded="true" />
-            <element signature="e#22874#22875#0" expanded="true" />
-            <element signature="e#25370#32051#0" expanded="true" />
-            <element signature="e#27816#28815#0" expanded="true" />
-            <element signature="e#28814#28815#0" expanded="true" />
-            <element signature="e#32050#32051#0" expanded="true" />
+            <element signature="e#2439#2447#0" expanded="true" />
+            <element signature="e#2560#2569#0" expanded="true" />
+            <element signature="e#2620#2628#0" expanded="true" />
+            <element signature="e#6988#7655#0" expanded="true" />
+            <element signature="e#7654#7655#0" expanded="true" />
+            <element signature="e#7721#8478#0" expanded="true" />
+            <element signature="e#8477#8478#0" expanded="true" />
           </folding>
         </state>
       </provider>

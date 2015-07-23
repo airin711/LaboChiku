@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="window">
+        <item name="android:windowTitleBackgroundStyle">@style/color</item>
+    </style>
+
+    <style name="color">
+        <item name="android:background">#00BFFF</item>
+    </style>
+</resources>

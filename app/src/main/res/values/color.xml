@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actionbar_background">#303f9f</color>
+    <color name="actionbar_text">#ffffff</color>
+
+
+        <!-- Material -->
+    <color name="primary">#4caf50</color>
+    <color name="primary_dark">#388e3c</color>
+
+</resources>

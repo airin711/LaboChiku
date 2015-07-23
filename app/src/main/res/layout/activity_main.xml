@@ -10,12 +10,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="107dp"
+        android:layout_height="147dp"
         android:id="@+id/spendtimeView"
         android:layout_row="0"
         android:layout_column="1"
         android:textSize="40sp"
-        android:gravity="center" />
+        android:gravity="center|bottom" />
 
     <TextView
         android:layout_width="739dp"
@@ -125,22 +125,48 @@
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="673dp"
         android:layout_height="196dp"
         android:layout_row="3"
-        android:layout_column="1">
+        android:layout_column="1"
+        android:layout_gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/labochikuView"
-            android:layout_gravity="left|top" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="270dp"
+            android:layout_height="270dp"
             android:id="@+id/labofuki"
             android:layout_gravity="center_horizontal|top" />
+
+        <ImageView
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:id="@+id/labogurashiView"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:id="@+id/labochikuView"
+            android:layout_gravity="center_vertical|left" />
+
+        <ImageView
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ilovelabView"
+            android:layout_gravity="right|center_vertical" />
+
+        <ImageView
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:id="@+id/labogurashifuki"
+            android:layout_gravity="right|center_vertical" />
+
+        <ImageView
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:id="@+id/ilovelabfuki"
+            android:layout_gravity="center" />
+
     </FrameLayout>
 
     <Button

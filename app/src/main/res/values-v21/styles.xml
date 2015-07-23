@@ -2,4 +2,10 @@
 <resources>
     <style name="AppTheme" parent="android:Theme.Material.Light">
     </style>
+
+    <style name="MyAppTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryDark">#303F9F</item>
+        <item name="colorAccent">#E91E63</item>
+    </style>
 </resources>
